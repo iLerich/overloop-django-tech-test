@@ -7,3 +7,9 @@ class Article(models.Model):
     regions = models.ManyToManyField(
         'regions.Region', related_name='articles', blank=True
     )
+    author = models.ForeignKey(
+        'authors.Author',
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
+    )
